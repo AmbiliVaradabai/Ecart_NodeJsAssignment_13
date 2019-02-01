@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        
+    <div class="collapse navbar-collapse"  >
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/Products" routerLinkActive="active">Products</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/Cart" routerLinkActive="active">Cart</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/CartAdmin" routerLinkActive="active">AdminView</a>
+        </li>
+        </ul>
+        <ul class="navbar-nav">
+            <a class="nav-link" *ngIf="!authService.loggedIn()" routerLink="/Login" routerLinkActive="active">Login</a>
+            <a class="nav-link" style="cursor:pointer" *ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Logout</a>                  
+        </ul>
+    </div>
+</nav>    
+<div class="container">
+<router-outlet></router-outlet>            
+</div>

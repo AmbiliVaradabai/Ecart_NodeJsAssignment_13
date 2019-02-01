@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="py-5">
+    <div class="row">
+
+      <div class="col-md-8 mx-auto">
+        <ul class="items">
+          <li (click)="onSelect(Product)" *ngFor="let Product of ProductList"  >
+            <span class="badge">{{Product.ProductID}}</span> {{Product.ItemType}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

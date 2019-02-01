@@ -1,0 +1,21 @@
+<div class="row mt-5">
+  <div class="col-md-4 mb-3" >
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">{{cart.ItemType + ' - ' + cart.ProductName}}</h5>
+        
+        <h6 class="card-title">${{cart.UnitPrice}}</h6>   
+        <label>Quantity:</label><input type ="number" [(ngModel)]="cart.Quantity" name="Quantity">  
+      </div>
+      <div class="card-footer text-muted">
+          <div class="col-sm-12 text-center">
+              <button type="button" (click)="editCart(cart)" class="btn btn-primary float-right">Update</button>
+          </div>          
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <button (click)="gotoCarts(cart)">Back To Cart</button>
+</div>

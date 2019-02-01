@@ -1,0 +1,30 @@
+<h3>Cart List</h3>
+<table class="table">
+  <thead></thead>
+    <tr>
+        <th>Order Id</th>
+        <th>User Name</th>
+        <th>ProductID</th>
+        <th>ItemType</th>
+        <th>ProductName</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+        <th>Is Approved</th>
+        <th>Action</th>
+    </tr>
+    <tbody>
+        <tr *ngFor="let cart of carts">
+            <td>{{cart.PurchaseID}}</td>
+            <td>{{cart.UserName}}</td>
+            <td>{{cart.ProductID}}</td>
+            <td>{{cart.ItemType}}</td>
+            <td>{{cart.ProductName}}</td>
+            <td>${{cart.UnitPrice}}</td>
+            <td>{{cart.Quantity}}</td>
+            <td><input type="checkbox"  [checked]= "isApproved(cart.IsApproved)" disabled></td>
+            <td><a><button type="button" [disabled]="isApproved(cart.IsApproved)" class="btn btn-danger btn-sm" (click)="removeFromCart(cart.PurchaseID)" >Remove</button></a></td>
+            <td><a><button type="button" [disabled]="isApproved(cart.IsApproved)" class="btn btn-primary btn-sm" (click)="onEdit(cart)" >Edit Cart</button></a></td>
+        </tr>
+    </tbody>
+    
+</table>
